@@ -56,4 +56,16 @@
             from_port: 22
             to_port: 22
             group_id: "{{bastionSGid}}"
-      register: vprofileELBSG_out
+      register: vprofileStackSG_out
+
+    - name: Update Security group with its own SG id
+      ec2_group:
+        name: vprofileStackInternal-SG
+        description: Allow port 22 with SG
+        region: "{{region}}"
+        vpc_id: "{{vpcid}}"
+        purge_rules: no
+        rules:
+          - proto: all
+            group_id: {{vprofileStackSG_out.group_id}}
+      register: vprofileStackInternal_out
