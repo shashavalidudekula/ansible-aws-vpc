@@ -21,7 +21,7 @@
 
     - name: save private key to file
       copy:
-        content: "{{vprofile_out.key.private_key}}"
+        content: "{{vprofilekey_out.key.private_key}}"
         dest: "./vprofilestack.pem"
         mode: 0600
       when: vprofilekey_out.changed
