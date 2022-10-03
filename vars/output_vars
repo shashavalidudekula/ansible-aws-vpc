@@ -6,6 +6,12 @@
  privsub2id: subnet-02ee2616e86ef4986
  privsub3id: subnet-05f677acd67b77b46
  igwid: igw-03443fff8d1b68ab6
+<<<<<<< HEAD
  pubRTid: rtb-052da14d139889da0
  NATGWid: nat-0b3b030087db46096
  privRTid: rtb-05f32890ee63196e2
+=======
+ pubRTid: rtb-052da14d139889da0 
+ NATGWid: nat-0b3b030087db46096
+ privRTid: rtb-05f32890ee63196e2 
+>>>>>>> e371157 (added git ignore file)
