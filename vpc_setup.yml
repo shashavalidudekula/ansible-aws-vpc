@@ -73,7 +73,7 @@
         cidr: "{{PrivSub2Cidr}}"
         map_public: no
         tags:
-          Name: vprofile-PubSub2Cidr
+          Name: vprofile-PrivSub2Cidr
       register: pubsub2_out
 
     - name: Create private subnet 3 in zone3
@@ -85,5 +85,5 @@
         cidr: "{{PrivSub3Cidr}}"
         map_public: no
         tags:
-          Name: vprofile-PrivSub1Cidr
+          Name: vprofile-PrivSub3Cidr
       register: privsub3_out
