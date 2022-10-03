@@ -74,7 +74,7 @@
         map_public: no
         tags:
           Name: vprofile-PrivSub2Cidr
-      register: pubsub2_out
+      register: privsub2_out
 
     - name: Create private subnet 3 in zone3
       ec2_vpc_subnet:
