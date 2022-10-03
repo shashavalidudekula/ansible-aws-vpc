@@ -20,3 +20,6 @@ zone2: "ap-south-1b"
 zone3: "ap-south-1c"
 
 state: present
+
+# Bastion/jump server vars
+bastion_ami: ami-05c8ca4485f8b138a
