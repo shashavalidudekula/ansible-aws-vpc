@@ -87,3 +87,12 @@
         tags:
           Name: vprofile-PrivSub3Cidr
       register: privsub3_out
+
+    - name: Create Internet Gateway
+      ec2_vpc_igw:
+        vpc_id: "{{vpcout.vpc.id}}"
+        state: "{{state}}"
+        region: "{{region}}"
+        tags:
+          Name: vprofile_igw
+      register: igw_out
