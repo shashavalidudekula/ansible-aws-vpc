@@ -67,5 +67,5 @@
         purge_rules: no
         rules:
           - proto: all
-            group_id: "{{vprofileStackSG_out.group_id}}""
+            group_id: "{{vprofileStackSG_out.group_id}}"
       register: vprofileStackInternal_out
