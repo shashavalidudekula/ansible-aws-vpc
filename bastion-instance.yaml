@@ -49,7 +49,7 @@
           Project: vprofile
           Owner: Shasha
         exact_count: 1
-        count_tags:
+        count_tag:
           Name: "Bastion_host"
           Project: vprofile
           Owner: Shasha
