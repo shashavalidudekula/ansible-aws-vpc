@@ -60,12 +60,11 @@
 
     - name: Update Security group with its own SG id
       ec2_group:
-        name: vprofileStackInternal-SG
-        description: Allow port 22 with SG
+        name: vprofileStack-SG
+        description: Allow port 22 within SG
         region: "{{region}}"
         vpc_id: "{{vpcid}}"
         purge_rules: no
         rules:
           - proto: all
             group_id: "{{vprofileStackSG_out.group_id}}"
-      register: vprofileStackInternal_out
