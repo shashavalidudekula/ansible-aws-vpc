@@ -15,7 +15,7 @@
 
     - name: create vprofile stack ec2 key
       ec2_key: 
-        name: vprofilestack.pem
+        name: vprofilestack
         region: "{{region}}"
       register: vprofilekey_out
 
