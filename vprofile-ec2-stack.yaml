@@ -26,4 +26,34 @@
         mode: 0600
       when: vprofilekey_out.changed
 
-    
+    - name: Create Security group for Load Balancer
+      ec2_group:
+        name: vprofileELB-SG
+        description: Allow port 80 from everywhere and all port within SG
+        region: "{{region}}"
+        vpc_id: "{{vpcid}}"
+        rules:
+          - proto: tcp
+            from_port: 80
+            to_port: 80
+            cidr_ip: 0.0.0.0/0
+      register: vprofileELBSG_out
+
+    - name: Security Group for Vprofile Stack
+      ec2_group:
+        name: vprofileStack-SG
+        description: Allow port 22 from everywhere and all port within SG
+        region: "{{region}}"
+        vpc_id: "{{vpcid}}"
+        purge_rules: no
+        rules:
+          - proto: tcp
+            from_port: 80
+            to_port: 80
+            group_id: "{{vprofileELBSG_out.group_id}}"
+
+          - proto: tcp
+            from_port: 22
+            to_port: 22
+            group_id: "{{bastionSGid}}"
+      register: vprofileELBSG_out
