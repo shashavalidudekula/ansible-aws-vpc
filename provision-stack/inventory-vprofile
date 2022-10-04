@@ -1,0 +1,38 @@
+# BEGIN ANSIBLE MANAGED BLOCK
+web01 ansible_host= 172.20.4.56
+app01 ansible_host= 172.20.4.46
+mc01 ansible_host= 172.20.4.232
+rmq01 ansible_host= 172.20.4.200
+db01 ansible_host= 172.20.4.129
+cntrl ansible_host=127.0.0.1 ansible_connection=local
+
+[webservers]
+web01
+
+[appservers]
+app01
+
+[rmqservers] #RabbitMQServers
+rmq01
+
+[mcservers] #memcacheServers
+mc01
+
+[dbservers]
+db01
+
+[control]
+cntrl
+
+[stack:children]
+webservers
+appservers
+rmqservers
+mcservers
+dbservers
+
+[stack:vars]
+ansible_user=ubuntu
+ansible_ssh_private_key_file=./provision-stack/vprofilestack.pem
+#ansible_python_interpreter=/usr/bin/python3
+# END ANSIBLE MANAGED BLOCK
