@@ -182,3 +182,6 @@
         - mc01_out
         - app01_out
         - web01_out
+
+    - debug:
+        var: db01_out
