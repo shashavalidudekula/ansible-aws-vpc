@@ -175,7 +175,7 @@
       register: db01_out
 
     - debug:
-        var: "{{item}}.instances.id"
+        var: "{{item}}.instances[0].id}}"
       loop:
         - db01_out
         - rmq01_out
