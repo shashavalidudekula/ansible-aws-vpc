@@ -176,9 +176,9 @@
 
     - debug:
         var: "{{item}}.instances.id"
-        loop:
-          - db01_out
-          - rmq01_out
-          - mc01_out
-          - app01_out
-          - web01_out
+      loop:
+        - db01_out
+        - rmq01_out
+        - mc01_out
+        - app01_out
+        - web01_out
