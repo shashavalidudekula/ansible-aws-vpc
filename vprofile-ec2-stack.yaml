@@ -222,7 +222,7 @@
 
     - name: creating dynamic inventory file
       blockinfile:
-        path: provision_stack/inventory-vprofile
+        path: provision-stack/inventory-vprofile
         block: |
           web01 ansible_host= {{web01_out.tagged_instances[0].private_ip}}
           app01 ansible_host= {{app01_out.tagged_instances[0].private_ip}}
